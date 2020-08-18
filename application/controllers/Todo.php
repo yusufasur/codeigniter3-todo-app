@@ -8,8 +8,6 @@ class Todo extends CI_Controller
         $this->load->model('todo_model');
     }
 
-    // siteAdı / controllerAdı / metodAdı / param1 / param2 /paramN
-
     public function index()
     {
         $items = $this->todo_model->get_all();
@@ -37,8 +35,6 @@ class Todo extends CI_Controller
 
     public function delete($id)
     {
-        //die($this->uri->segment(2));
-
         $delete = $this->todo_model->delete($id);
         if ($delete) {
             redirect(base_url());
